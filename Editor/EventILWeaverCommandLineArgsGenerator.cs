@@ -69,15 +69,15 @@ namespace Assets.MissingUnityEvents.Editor
                     RecursivelyFindDlls(childDirectory, dllName, unityRequiredDllPaths);
                 }
             }
-            catch (DirectoryNotFoundException _)
+            catch (DirectoryNotFoundException)
             {
                 Debug.Log($"Path too long for {currentDir.FullName} if there are any matching DLLs ({dllName}) they'll be excluded. This is internal windows limitation - some workarounds can be found in 'https://forum.unity.com/threads/solved-directorynotfoundexception-with-different-packages.643297/'");
             }
-            catch (PathTooLongException _)
+            catch (PathTooLongException)
             {
                 Debug.Log($"Path too long for {currentDir.FullName} if there are any matching DLLs ({dllName}) they'll be excluded. This is internal windows limitation - some workarounds can be found in 'https://forum.unity.com/threads/solved-directorynotfoundexception-with-different-packages.643297/'");
             }
-            catch (Exception _)
+            catch (Exception)
             {
                 Debug.Log($"Unknown exception - this is usually issue with path too long for {currentDir.FullName} if there are any matching DLLs ({dllName}) they'll be excluded. This is internal windows limitation - some workarounds can be found in 'https://forum.unity.com/threads/solved-directorynotfoundexception-with-different-packages.643297/'");
             }
